@@ -1,2 +1,2 @@
 # settingDemo
-an setting button demo
+a setting button demo
