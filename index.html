@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #itemWrapper {
+            position: absolute;
+            left: 0px;
+            top: 40px;
+            width: 66px;
+            border-radius: 5px;
+            display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: rgb(238, 238, 238);
+            z-index: 10000;
+            box-shadow: 4px 4px 4px rgb(61, 61, 61);
+
+        }
+
+        .propItem {
+            width: 60px;
+            height: 50px;
+            margin-bottom: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            font-size: 12px;
+            color: #000000;
+        }
+
+
+        .propItem .label {
+            display: block;
+            user-select: none;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            /* color: #ec8135; */
+            border-radius: 5px;
+        }
+
+        .propItem select {
+            user-select: none;
+            line-height: 24px;
+            width: 60px;
+            height: 24px;
+            background: #000000;
+            font-size: 12px;
+            color: #ffffff;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+        }
+
+        .btn {
+            user-select: none;
+            height: 32px;
+            width: 60px;
+            line-height: 32px;
+            text-align: center;
+            background: #0f0f0f;
+            color: #ffffff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .btn:hover {
+            background: linear-gradient(0deg, #ec8135, #ef9554);
+            cursor: pointer;
+        }
+
+        #ctrl {
+            user-select: none;
+            width: 64px;
+            height: 32px;
+            position: absolute;
+            border-radius: 10px;
+            background: #000;
+            box-shadow: 4px 4px 4px rgb(61, 61, 61);
+        }
+
+        #ctrl:hover {
+            cursor: pointer;
+            background: linear-gradient(0deg, #ec8135, #ef9554);
+        }
+
+        #ctrl:hover #triangle {
+            background: linear-gradient(0deg, #ec8135, #ef9554);
+        }
+
+        #ctrl span {
+            position: absolute;
+            line-height: 32px;
+            z-index: 10;
+            color: #ffffff;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #triangle {
+            position: absolute;
+            display: none;
+            left: 50%;
+            top: 72%;
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: #000;
+        }
+
+        #outer {
+            position: fixed;
+            left: 30px;
+            top: 10px;
+            z-index: 10000;
+        }
+    </style>
+
+    <div id="outer">
+        <div id="ctrl">
+            <span>Setting</span>
+            <div id="triangle"></div>
+        </div>
+        <div id="itemWrapper">
+            <div class="propItem">
+                <div class="btn" id="loadBtn">Load</div>
+            </div>
+            <div class="propItem">
+                <div class="btn" id='update'>Update</div>
+            </div>
+            <div class="propItem">
+                <div class="btn" id='insert'>Insert</div>
+            </div>
+            <div class="propItem">
+                <label class="label" for="displayMode">disMode:</label>
+                <select name="" id='displayMode'>
+                    <option value="1">single</option>
+                    <option value="1">continuous</option>
+                </select>
+            </div>
+            <div class="propItem">
+                <label class="label" for="operationMode">opMode:</label>
+                <select name="" id='operationMode'>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <div class="propItem">
+                <label class="label" for="rotateMode">rotateMode:</label>
+                <select name="" id='rotateMode'>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <div class="propItem">
+                <label class="label" for="fitType">fitType:</label>
+                <select name="" id='fitType'>
+                    <option value="0">window</option>
+                    <option value="1">width</option>
+                    <option value="2">height</option>
+                    <option value="3">none</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./src/index.js"></script>
+</body>
+
+</html>
